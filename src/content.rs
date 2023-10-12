@@ -552,6 +552,7 @@ impl Array {
 
     /// Returns a cloned vector of item references in sorted order. The items owned by this Array
     /// retain their original order.
+    /// NOTE(bowei): this is a good place to copy for how to add boolean flag to control sorting
     fn sort_items(&self, options: &FormatOptions) -> Vec<Rc<RefCell<Value>>> {
         let mut items = self.items.clone();
         if options.sort_array_items {
