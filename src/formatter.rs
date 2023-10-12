@@ -116,6 +116,7 @@ impl SubpathOptions {
         self.get_subpath_options(&[name_or_star])
     }
 
+    /// NOTE(bowei): can we add alphabeticalness into here as a priority fallback?
     pub fn get_property_priority(&self, property_name: &str) -> usize {
         match self.property_name_priorities.get(property_name) {
             Some(priority) => *priority,

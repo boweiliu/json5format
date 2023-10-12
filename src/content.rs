@@ -793,6 +793,8 @@ impl Object {
 
     /// Returns a cloned vector of property references in sorted order. The properties owned by
     /// this Object retain their original order.
+    
+    /// NOTE(bowei): if we also wanted to add alphabetical sorting, this would be where to do it!
     fn sort_properties(&self, options: &SubpathOptions) -> Vec<Property> {
         let mut properties = self.properties.clone();
         properties.sort_by(|left, right| {
